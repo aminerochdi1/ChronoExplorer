@@ -1,6 +1,4 @@
-# [Chrono Explorer Angular - Bootstrap 4 UI Kit](https://demos.creative-tim.com/paper-kit-2-angular/)
-
-Explorez les événements clés, cartes interactives et archives multimédias d’un seul clic.
+# [Chrono Explorer Angular - Bootstrap 4 UI Kit](link)
 
 **Bootstrap 4 support**
 
