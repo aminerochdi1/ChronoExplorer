@@ -147,6 +147,7 @@ textarea.form-control{
   .input-group-append .input-group-text{
     background: transparent;
     border: 1px solid #DDDDDD;
+    font-weight: bold;
     border-left: none;
     @include transition(300ms, linear);
 
@@ -155,6 +156,7 @@ textarea.form-control{
     margin-right: 0;
     background: transparent;
     border: 1px solid #DDDDDD;
+    font-weight: bold;
     @include transition(300ms, linear);
   }
   &.input-group-focus {

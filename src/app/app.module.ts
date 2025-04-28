@@ -26,7 +26,7 @@ import { CardsComponent } from './components//cards/cards.component';
     NgbModule,
     FormsModule,
     RouterModule,
-    ComponentsModule,
+    // ComponentsModule,
     ExamplesModule,
     AppRoutingModule,
   ],
