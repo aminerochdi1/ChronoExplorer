@@ -12,6 +12,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 import { CardsComponent } from './components//cards/cards.component';
+import { EventsComponent } from './events/events.component';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { CardsComponent } from './components//cards/cards.component';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    CardsComponent
+    EventsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +30,7 @@ import { CardsComponent } from './components//cards/cards.component';
     // ComponentsModule,
     ExamplesModule,
     AppRoutingModule,
+    CardsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

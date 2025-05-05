@@ -23,7 +23,8 @@ import { NgbdModalContent } from './modal/modal.component';
         NgbModule,
         NouisliderModule,
         RouterModule,
-        JwBootstrapSwitchNg2Module
+        JwBootstrapSwitchNg2Module,
+        CardsComponent
     ],
     declarations: [
         ComponentsComponent,
@@ -33,8 +34,7 @@ import { NgbdModalContent } from './modal/modal.component';
         NucleoiconsComponent,
         NotificationComponent,
         NgbdModalComponent,
-        NgbdModalContent,
-        CardsComponent
+        NgbdModalContent
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]
