@@ -7,6 +7,7 @@ import { filter, Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-root',
+    // imports:  [NavbarComponent],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })

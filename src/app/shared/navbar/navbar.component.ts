@@ -1,8 +1,11 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { CommonModule,Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
+    // standalone: true,  
+    // imports:[RouterModule],
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss']
 })

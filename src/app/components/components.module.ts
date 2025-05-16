@@ -21,9 +21,9 @@ import { NgbdModalContent } from './modal/modal.component';
         CommonModule,
         FormsModule,
         NgbModule,
-        NouisliderModule,
+       //NouisliderModule,
         RouterModule,
-        JwBootstrapSwitchNg2Module,
+       //JwBootstrapSwitchNg2Module,
         CardsComponent
     ],
     declarations: [
