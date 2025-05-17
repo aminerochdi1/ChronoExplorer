@@ -1,21 +1,27 @@
-<div class="game-section">
-  <section class="owl-stage">
-    <article *ngFor="let event of events" class="item">
+<div class="game-section" *ngIf="events.length > 0">
+  <section class="owl-stage" >
+    <article *ngFor="let event of visibleEvents" class="item">
       
       <div class="item-img">
         <img *ngIf="event.image_path" [src]="'assets/img/' + event.image_path" alt="{{ event.title }}" />
       </div>
 
-      <a href="#" class="card_link">
-        <!-- <div class="card__img--hover"></div> -->
-      </a>
+      <a href="#" class="card_link"></a>
 
       <div class="item-desc">
         <span class="card__category">{{ event.category }}</span>
         <h3 class="card__title">{{ event.title }}</h3>
-        <h2 class="card__title"> {{ event.location }}</h2>
+        <h2 class="card__title">{{ event.location }}</h2>
       </div>
-      
     </article>
   </section>
+
+  <div class="nav-buttons" *ngIf="shouldShowNavigation()">
+    <button (click)="prevSlide()">←</button>
+    <button (click)="nextSlide()">→</button>
+  </div>
+</div>
+
+<div *ngIf="events.length === 0">
+  <p>Aucun Événements.</p>
 </div>
