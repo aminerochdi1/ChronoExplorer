@@ -10,15 +10,17 @@ import { SignupComponent } from './examples/signup/signup.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { EventsComponent } from './events/events.component';
+import { TypographyComponent } from './components/typography/typography.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',             component: ComponentsComponent },
     { path: 'user-profile',     component: ProfileComponent },
-    { path: 'signup',           component: SignupComponent },
+    { path: 'login',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
-    { path: 'evenements',       component: EventsComponent }
+    { path: 'evenements',       component: EventsComponent },
+    { path: 'typography',       component: TypographyComponent }
 ];
 
 @NgModule({

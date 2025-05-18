@@ -15,7 +15,7 @@ import { SignupComponent } from './signup/signup.component';
     ],
     declarations: [
         LandingComponent,
-        SignupComponent,
+        // SignupComponent,
         ProfileComponent
     ]
 })

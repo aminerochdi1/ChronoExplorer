@@ -1,4 +1,11 @@
 <div class="game-section" *ngIf="events.length > 0">
+  <!-- Title -->
+  <div class="line-title">
+    <h2>
+      les événements historiques
+    </h2>
+  </div>
+
   <section class="owl-stage" >
     <article *ngFor="let event of visibleEvents" class="item">
       

@@ -53,7 +53,7 @@ export class CardComponent implements OnInit {
         if (width < 600) {
           this.pageSize = 1; // mobile
         } else if (width < 900) {
-          this.pageSize = 2; // tablet
+          this.pageSize = 3; // tablet
         } else {
           this.pageSize = 4; // desktop
         }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { CommonModule,Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -75,16 +75,16 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
-    isDocumentation() {
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
-          titlee = titlee.slice( 1 );
-      }
-        if( titlee === '/documentation' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+    // isDocumentation() {
+    //   var titlee = this.location.prepareExternalUrl(this.location.path());
+    //   if(titlee.charAt(0) === '#'){
+    //       titlee = titlee.slice( 1 );
+    //   }
+    //     if( titlee === '/documentation' ) {
+    //         return true;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
 }

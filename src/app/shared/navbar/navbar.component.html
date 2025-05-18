@@ -11,14 +11,14 @@
         <div class="navbar-collapse" id="navbarToggler">
 
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" rel="tooltip" title="Timeline" data-placement="bottom" [routerLink]="['/home']">
                         <p class="text-white fs-5 mb-0">Timeline</p>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Evenements" data-placement="bottom" [routerLink]="['/evenements']">
+                    <a class="nav-link" target="_blank" rel="tooltip" title="Evenements" data-placement="bottom" [routerLink]="['/evenements']">
                         <p class="text-white fs-5 mb-0">Événements</p>
                     </a>
                 </li>
@@ -30,19 +30,19 @@
                 </li> -->
 
                 <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Archives" data-placement="bottom" [routerLink]="['/home']">
+                    <a class="nav-link" target="_blank" rel="tooltip" title="Archives" data-placement="bottom" [routerLink]="['/home']">
                         <p class="text-white fs-5 mb-0">Archives</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="A propos" data-placement="bottom" [routerLink]="['/home']">
+                    <a class="nav-link" target="_blank" rel="tooltip" title="A propos" data-placement="bottom" [routerLink]="['/home']">
                         <p class="text-white fs-5 mb-0">À propos</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Contact" data-placement="bottom" [routerLink]="['/home']">
+                    <a class="nav-link" target="_blank" rel="tooltip" title="Contact" data-placement="bottom" [routerLink]="['/home']">
                         <p class="text-white fs-5 mb-0">Contact</p>
                     </a>
                 </li>
@@ -52,7 +52,7 @@
                 </li> -->
 
                 <li class="nav-item" *ngIf="isHome()">
-                    <a [routerLink]="['/user-profile']" target="_blank" class="btn btn-danger btn-round">Se Connecter</a>
+                    <a [routerLink]="['/login']" class="btn btn-danger btn-round">Se Connecter</a>
                 </li>
                 
             </ul>
