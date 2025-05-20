@@ -1,12 +1,24 @@
+
+
+
 <div class="wrapper">
+
     <div class="page-header" style="background-image: url('./assets/img/The Metropolitan Museum.jpg');">
         <div class="filter"></div>
             <div class="container">
+
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
                       <div class="card card-register">
+                        <div *ngIf="showErrorPopup" class="popup-error">
+                          Identifiants invalides. Veuillez réessayer.
+                          <button (click)="closeErrorPopup()" class="close-btn">X</button>
+                         </div>
+
                           <h3 class="title">Bienvenue</h3>
-                          <form class="register-form">
+                          
+
+                          <form class="register-form" (ngSubmit)="onSubmit(emailInput.value, passwordInput.value)">
                               <label>Email</label>
                               <div class="input-group form-group-no-border" >
                                 <div class="input-group-prepend">
@@ -14,8 +26,7 @@
                                       <i class="nc-icon nc-email-85"></i>
                                   </span>
                                 </div>
-
-                                  <input type="email" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" >
+                                  <input type="email" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" #emailInput required>
                               </div>
 
                               <label>Password</label>
@@ -25,15 +36,17 @@
                                       <i class="nc-icon nc-key-25"></i>
                                   </span>
                                 </div>
-                                  <input type="password" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" >
+                                  <input type="password" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" #passwordInput required>
                               </div>
-                              <button class="btn btn-danger btn-block btn-round">se connecter</button>
+
+                              <button class="btn btn-danger btn-block btn-round" type="submit">se connecter</button>
                           </form>
+
                           <div class="forgot">
-                              <button class="btn btn-link btn-danger" 
-                              (click)="goToSignUp()"
+                              <button class="btn btn-link btn-danger" [routerLink]="['/register']" routerLinkActive="router-link-active" 
                               >Vous n’avez pas de compte ? Créer un compte</button>
                           </div>
+
                       </div>
                     </div>
                 </div>

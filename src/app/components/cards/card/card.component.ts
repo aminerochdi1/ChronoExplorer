@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Event,EventService } from './../../../events/event.service';
 import { Component, OnInit,AfterViewInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+
 import Swiper from 'swiper';
 // import 'swiper/css';
 
@@ -25,6 +27,7 @@ export class CardComponent implements OnInit {
     return this.events.slice(start, start + this.pageSize);
   }
 
+
   nextSlide() {
     if ((this.currentIndex + 1) * this.pageSize >= this.events.length) {
       this.currentIndex = 0; // loop to start
@@ -46,7 +49,11 @@ export class CardComponent implements OnInit {
   }
 
   //CTOR
-  constructor(private eventService: EventService) {} 
+  constructor(private eventService: EventService,private router: Router) {} 
+
+  onClickedEvent(id: number) {
+    this.router.navigate(['/events', id]);
+  }
 
       //Changing PageSize
       setPageSize(width: number) {

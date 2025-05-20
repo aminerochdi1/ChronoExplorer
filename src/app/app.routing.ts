@@ -12,15 +12,26 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { EventsComponent } from './events/events.component';
 import { TypographyComponent } from './components/typography/typography.component';
 
+import { AuthGuard } from './service/auth/auth.guard';
+import { LoggedIn } from './service/auth/auth.logged-in';
+import { RegistrationComponent } from './registration/registration.component';
+import { SettingsComponent } from './settings/settings.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
+
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',             component: ComponentsComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'login',           component: SignupComponent },
+    { path: 'user-profile',     component: ProfileComponent, canActivate: [AuthGuard] },
+    { path: 'login',           component: SignupComponent, canActivate:[LoggedIn] },
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
-    { path: 'evenements',       component: EventsComponent },
-    { path: 'typography',       component: TypographyComponent }
+    { path: 'evenements',       component: EventsComponent, canActivate: [AuthGuard] },
+    { path: 'typography',       component: TypographyComponent },
+    { path: 'register',       component: RegistrationComponent,canActivate:[LoggedIn] },
+    { path: 'settings/:id',       component: SettingsComponent, canActivate: [AuthGuard] },
+    { path: 'events/:id', component: EventDetailsComponent,canActivate: [AuthGuard] }
+
+
 ];
 
 @NgModule({

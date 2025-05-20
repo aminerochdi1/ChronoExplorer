@@ -6,14 +6,14 @@
     </h2>
   </div>
 
-  <section class="owl-stage" >
-    <article *ngFor="let event of visibleEvents" class="item">
+  <section class="owl-stage">
+    <article *ngFor="let event of visibleEvents" class="item"  (click)="onClickedEvent(event.id)">
       
       <div class="item-img">
         <img *ngIf="event.image_path" [src]="'assets/img/' + event.image_path" alt="{{ event.title }}" />
       </div>
 
-      <a href="#" class="card_link"></a>
+      <a [routerLink]="['/events', event.id]" class="card_link"></a>
 
       <div class="item-desc">
         <span class="card__category">{{ event.category }}</span>

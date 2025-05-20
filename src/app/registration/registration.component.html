@@ -1,0 +1,44 @@
+<div class="wrapper">
+
+    <div class="page-header" style="background-image: url('./assets/img/The Metropolitan Museum.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+
+                          <h3 class="title">Créer un nouveau compte</h3>
+                          
+                          <form class="register-form" #registerForm="ngForm" (ngSubmit)="onRegister(usernameInput.value, emailInput.value, passwordInput.value)" novalidate>
+
+                            <label>Username</label>
+                            <div class="input-group form-group-no-border">
+                              <input type="text" class="form-control" placeholder="Username" #usernameInput required name="username" ngModel>
+                            </div>
+                          
+                            <label>Email</label>
+                            <div class="input-group form-group-no-border">
+                              <input type="email" class="form-control" placeholder="Email" #emailInput required name="email" ngModel>
+                            </div>
+                          
+                            <label>Password</label>
+                            <div class="input-group form-group-no-border">
+                              <input type="password" class="form-control" placeholder="Password" #passwordInput required name="password" ngModel>
+                            </div>
+                          
+                            <button class="btn btn-danger btn-block btn-round" type="submit" [disabled]="!registerForm.form.valid">Créer</button>
+                          
+                            <div class="forgot">
+                              <button class="btn btn-link btn-danger" type="button" [routerLink]="['/login']">
+                                Vous avez déjà un compte ? Login
+                              </button>
+                            </div>
+                          </form>                          
+
+                      </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

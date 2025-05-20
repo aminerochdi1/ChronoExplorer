@@ -1,0 +1,50 @@
+<div *ngIf="event" class="event-details-container">
+    <!-- Event Title -->
+    <!-- <h2>{{ event.title }}</h2> -->
+  
+    <!-- Event Image -->
+    <img [src]="'assets/img/' + event.image_path" alt="{{ event.title }}" />
+  
+    <!-- Event Info -->
+    <p><strong>Lieu:</strong> {{ event.location }}</p>
+    <p><strong>Date:</strong> {{ event.event_date | date }}</p>
+    <p><strong>Description : {{event.description}}</strong></p>
+    <p>{{ event['©'] }}</p>
+  
+    <!-- Comment Section -->
+<!-- Comment Section with Styled Classes -->
+<div class="comments-container">
+    <h3 class="title">Commentaires</h3>
+    <div *ngIf="comments.length === 0">Aucun commentaire pour cet événement.</div>
+
+    <ul class="comments-list">
+      <li *ngFor="let comment of comments">
+        <div class="comment-main-level">
+  
+          <!-- Comment Box -->
+          <div class="comment-box">
+            <div class="comment-head">
+              <h6 class="comment-name by-author">{{ comment.user_name }}</h6>
+              <span>{{ comment.created_at | date: 'short' }}</span>
+            </div>
+            <div class="comment-content">
+              {{ comment.content }}
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  
+    <!-- Add New Comment -->
+    <div class="comment-form" style="margin-top: 2rem;">
+      <input [(ngModel)]="newComment.user_name" placeholder="Votre nom" />
+      <textarea [(ngModel)]="newComment.content" placeholder="Votre commentaire..."></textarea>
+      <div class="btn-group" style="margin-top: 1rem;">
+        <button (click)="postComment()" class="btn btn-danger">Envoyer</button>
+        <button [routerLink]="['/evenements']" class="btn btn-default">Retourner</button>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  

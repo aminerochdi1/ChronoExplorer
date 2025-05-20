@@ -11,32 +11,23 @@
         <div class="navbar-collapse" id="navbarToggler">
 
             <ul class="navbar-nav ml-auto">
-                <!-- <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Timeline" data-placement="bottom" [routerLink]="['/home']">
-                        <p class="text-white fs-5 mb-0">Timeline</p>
-                    </a>
-                </li> -->
+
 
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" rel="tooltip" title="Evenements" data-placement="bottom" [routerLink]="['/evenements']">
+                    <a class="nav-link" rel="tooltip" title="Evenements" data-placement="bottom" [routerLink]="['/evenements']">
                         <p class="text-white fs-5 mb-0">Événements</p>
                     </a>
                 </li>
 
-                <!-- <li class="nav-item">
-                    <a class="nav-link" rel="tooltip" title="Cartes" data-placement="bottom" [routerLink]="['/home']">
-                        <p class="text-white fs-5 mb-0">Cartes</p>
-                    </a>
-                </li> -->
 
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" rel="tooltip" title="Archives" data-placement="bottom" [routerLink]="['/home']">
+                    <a class="nav-link"  rel="tooltip" title="Archives" data-placement="bottom" [routerLink]="['/home']">
                         <p class="text-white fs-5 mb-0">Archives</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" rel="tooltip" title="A propos" data-placement="bottom" [routerLink]="['/home']">
+                    <a class="nav-link" rel="tooltip" title="A propos" data-placement="bottom" [routerLink]="['/home']">
                         <p class="text-white fs-5 mb-0">À propos</p>
                     </a>
                 </li>
@@ -47,13 +38,15 @@
                     </a>
                 </li>
 
-                <!-- <li class="nav-item" *ngIf="isEvents()">
-                    <p class="btn btn-danger btn-round">I am in events</p>
-                </li> -->
 
-                <li class="nav-item" *ngIf="isHome()">
-                    <a [routerLink]="['/login']" class="btn btn-danger btn-round">Se Connecter</a>
-                </li>
+                <li class="nav-item" *ngIf="isLoggedIn(); else loginBtn">
+                    <a [routerLink]="['/user-profile']" class="btn btn-success btn-round">Profil</a>
+                  </li>
+                  <ng-template #loginBtn>
+                    <li class="nav-item">
+                      <a [routerLink]="['/login']" class="btn btn-danger btn-round">Se Connecter</a>
+                    </li>
+                  </ng-template>
                 
             </ul>
         </div>

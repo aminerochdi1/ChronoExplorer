@@ -16,6 +16,9 @@ import { EventsComponent } from './events/events.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './components/cards/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistrationComponent } from './registration/registration.component';
+import { SettingsComponent } from './settings/settings.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    RegistrationComponent,
+    SettingsComponent,
+    EventDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -2496,6 +2496,7 @@ textarea.form-control {
 .img-circle {
   background-color: #FFFFFF;
   margin-bottom: 10px;
+  /* width: 100%; */
   padding: 4px;
   border-radius: 50% !important;
   max-width: 100%;
