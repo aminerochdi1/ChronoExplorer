@@ -1,13 +1,37 @@
-<div class="game-section" *ngIf="events.length > 0">
+<div class="game-section" >
   <!-- Title -->
   <div class="line-title">
     <h2>
       les événements historiques
     </h2>
-  </div>
+  </div>  
 
+     <!-- ─── search bar ─────────────────────────────────────────── -->
+      <div class="search-bar">
+        <search></search>
+      </div>
+      
+      <!-- ─── Filter bar ─────────────────────────────────────────── -->
+    <div class="category-chips">
+      <span
+        class="chip"
+        [class.selected]="filters.category === ''"
+        (click)="filters.category=''; applyFilters()">Toutes</span>
+    
+      <span
+        *ngFor="let cat of categories"
+        class="chip"
+        [class.selected]="filters.category === cat"
+        (click)="filters.category = cat; applyFilters()">
+        {{ cat }}
+      </span>
+    </div>
+    
   <section class="owl-stage">
-    <article *ngFor="let event of visibleEvents" class="item"  (click)="onClickedEvent(event.id)">
+    <div *ngIf="events.length === 0">
+      <p>Aucun Événements.</p>
+    </div>
+    <article *ngFor="let event of visibleEvents" class="item" (click)="onClickedEvent(event.id)">
       
       <div class="item-img">
         <img *ngIf="event.image_path" [src]="'assets/img/' + event.image_path" alt="{{ event.title }}" />
@@ -29,6 +53,4 @@
   </div>
 </div>
 
-<div *ngIf="events.length === 0">
-  <p>Aucun Événements.</p>
-</div>
+

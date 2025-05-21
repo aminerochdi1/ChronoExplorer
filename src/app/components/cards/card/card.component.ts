@@ -1,32 +1,48 @@
+import { FilterService } from './../../../service/event/filter.service';
 import { CommonModule } from '@angular/common';
 import { Event,EventService } from './../../../events/event.service';
-import { Component, OnInit,AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit,OnDestroy,AfterViewInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { SearchComponent } from 'app/search/search.component';
+import { SearchService } from 'app/service/search/search.service';
+import { Subscription } from 'rxjs';                         
 
-import Swiper from 'swiper';
-// import 'swiper/css';
-
-
+                
 @Component({
   selector: 'card',
   standalone:true,
-  imports: [CommonModule],
+  imports: [CommonModule,SearchComponent],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
 
   events: Event[] = [];
-  
+  private sub!: Subscription; 
   // Pagination Logic
   currentIndex = 0;
   pageSize=4;
+
+  categories: string[] = [
+    'Histoire',
+    'Catastrophe naturelle',
+    'Science',
+    'Politique',
+    "L'Antiquité",
+    'Moyen Âge',
+    "Renaissance & Temps Modernes",
+    "Époque contemporaine"
+  ];
+
+  filters = { category: '', location: '', date: '' };
+
 
   get visibleEvents(): Event[] {
     const start = this.currentIndex * this.pageSize;
     return this.events.slice(start, start + this.pageSize);
   }
-
+//CTOR
+  constructor(private eventService: EventService,private router: Router,private filterService:FilterService,private searchService:SearchService) {} 
 
   nextSlide() {
     if ((this.currentIndex + 1) * this.pageSize >= this.events.length) {
@@ -48,8 +64,7 @@ export class CardComponent implements OnInit {
     return this.events.length > this.pageSize;
   }
 
-  //CTOR
-  constructor(private eventService: EventService,private router: Router) {} 
+  
 
   onClickedEvent(id: number) {
     this.router.navigate(['/events', id]);
@@ -68,25 +83,46 @@ export class CardComponent implements OnInit {
 
   // Run ON LOAD
   ngOnInit(): void {
-    // Fetsh events
-    this.eventService.getEvents().subscribe({
-      next: (events) => {
-        this.events = events;
-      },
-      error: (error) => {
-        // console.error('API error:', error);
-      }
+    // 1. subscribe to live search stream
+    this.sub = this.searchService.events$.subscribe(events => {
+      this.events = events;
+      this.resetPageIfNeeded();
     });
-
-    //Change PageSize
+  
+    // 2. trigger initial load (empty title = full list)
+    this.searchService.update('');
+  
+    // 3. handle responsive carousel
     this.setPageSize(window.innerWidth);
-    
-    window.addEventListener('resize', () => {
-      this.setPageSize(window.innerWidth);
-    });
+    window.addEventListener('resize', () =>
+      this.setPageSize(window.innerWidth)
+    );
+  }
+  
 
+
+  applyFilters() {
+    this.filterService.getEvents(this.filters).subscribe(data => {
+      this.events = data;
+      this.resetPageIfNeeded();
+    });
   }
 
+  private loadEvents() {
+    this.filterService.getEvents({}).subscribe(data => {
+      this.events = data;
+      this.resetPageIfNeeded();
+    });
+  }
   
+
+  private resetPageIfNeeded() {
+    /* Keep currentIndex valid after list size changes */
+    if (this.currentIndex * this.pageSize >= this.events.length) {
+      this.currentIndex = 0;
+    }
+  }
+
+
 
 }

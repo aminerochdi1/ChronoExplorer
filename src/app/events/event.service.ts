@@ -29,7 +29,7 @@ export class EventService {
 
   constructor(private http: HttpClient) {}
 
-  getEvents(): Observable<Event[]> {
+  getEvents() {
     return this.http.get<Event[]>(this.apiUrl);
   }
   

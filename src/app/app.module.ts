@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     FooterComponent,
     RegistrationComponent,
     SettingsComponent,
-    EventDetailsComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule,
