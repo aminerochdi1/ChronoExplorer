@@ -1,0 +1,770 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>paper-kit-2-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">paper-kit-2-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  BasicelementsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/basicelements/basicelements.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-basicelements</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./basicelements.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./basicelements.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#doubleSlider" >doubleSlider</a>
+                            </li>
+                            <li>
+                                <a href="#focus" >focus</a>
+                            </li>
+                            <li>
+                                <a href="#simpleSlider" >simpleSlider</a>
+                            </li>
+                            <li>
+                                <a href="#state_default" >state_default</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/basicelements/basicelements.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/components/basicelements/basicelements.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="doubleSlider"></a>
+                    <span class="name">
+                        <span ><b>doubleSlider</b></span>
+                        <a href="#doubleSlider"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[20, 60]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/basicelements/basicelements.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="focus"></a>
+                    <span class="name">
+                        <span ><b>focus</b></span>
+                        <a href="#focus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/basicelements/basicelements.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="simpleSlider"></a>
+                    <span class="name">
+                        <span ><b>simpleSlider</b></span>
+                        <a href="#simpleSlider"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>40</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/basicelements/basicelements.component.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="state_default"></a>
+                    <span class="name">
+                        <span ><b>state_default</b></span>
+                        <a href="#state_default"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/basicelements/basicelements.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-basicelements&#x27;,
+  templateUrl: &#x27;./basicelements.component.html&#x27;,
+  styleUrls: [&#x27;./basicelements.component.scss&#x27;]
+})
+export class BasicelementsComponent implements OnInit {
+    simpleSlider &#x3D; 40;
+    doubleSlider &#x3D; [20, 60];
+    state_default: boolean &#x3D; true;
+    focus: any;
+    constructor() { }
+
+    ngOnInit() {}
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;section section-buttons&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+            &lt;h2&gt;Basic Components&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div id&#x3D;&quot;buttons&quot;&gt;
+            &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+                &lt;h3&gt;Buttons
+                    &lt;br/&gt;
+                    &lt;small&gt;Pick your style&lt;/small&gt;
+                &lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger&quot;&gt;Default&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger btn-round&quot;&gt;Round&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger btn-round&quot;&gt;&lt;i class&#x3D;&quot;fa fa-heart&quot;&gt;&lt;/i&gt; With Icon&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger btn-just-icon&quot;&gt;&lt;i class&#x3D;&quot;fa fa-heart&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger btn-link&quot;&gt;Simple&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+                &lt;h3&gt;&lt;small&gt;Pick your size&lt;/small&gt;&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-danger btn-sm&quot;&gt;Small&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-danger&quot;&gt;Regular&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-danger btn-lg&quot;&gt;Large&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+                &lt;h3&gt;&lt;small&gt;Pick your color&lt;/small&gt;&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-default btn-round&quot;&gt;Default&lt;/button&gt;&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-primary btn-round&quot;&gt;Primary&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-info btn-round&quot;&gt;Info&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-success btn-round&quot;&gt;Success&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-warning btn-round&quot;&gt;Warning&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-danger btn-round&quot;&gt;Danger&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;br/&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-default btn-round&quot;&gt;Default&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary btn-round&quot;&gt;Primary&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info btn-round&quot;&gt;Info&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success btn-round&quot;&gt;Success&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-warning btn-round&quot;&gt;Warning&lt;/button&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger btn-round&quot;&gt;Danger&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+            &lt;br/&gt;
+        &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+            &lt;h3&gt;Links&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+                &lt;a href&#x3D;&quot;#0&quot; class&#x3D;&quot;btn btn-link btn-default&quot;&gt;Default&lt;/a&gt;
+                &lt;a href&#x3D;&quot;#0&quot; class&#x3D;&quot;btn btn-link btn-primary&quot;&gt;Primary&lt;/a&gt;
+                &lt;a href&#x3D;&quot;#0&quot; class&#x3D;&quot;btn btn-link btn-success&quot;&gt;Success&lt;/a&gt;
+                &lt;a href&#x3D;&quot;#0&quot; class&#x3D;&quot;btn btn-link btn-info&quot;&gt;Info&lt;/a&gt;
+                &lt;a href&#x3D;&quot;#0&quot; class&#x3D;&quot;btn btn-link btn-warning&quot;&gt;Warning&lt;/a&gt;
+                &lt;a href&#x3D;&quot;#0&quot; class&#x3D;&quot;btn btn-link btn-danger&quot;&gt;Danger&lt;/a&gt;
+                &lt;a href&#x3D;&quot;#0&quot; class&#x3D;&quot;btn btn-link btn-neutral&quot;&gt;Neutral&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br/&gt;
+        &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+            &lt;h3&gt;Inputs&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Default&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group has-success&quot;&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control form-control-success&quot; id&#x3D;&quot;inputSuccess1&quot; value&#x3D;&quot;Success&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group has-danger&quot;&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control form-control-danger&quot; id&#x3D;&quot;inputDanger1&quot; value&#x3D;&quot;Error&quot;&gt;
+                    &lt;div class&#x3D;&quot;form-control-feedback&quot;&gt;Sorry, that username&#x27;s taken. Try another?&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+                &lt;div class&#x3D;&quot;input-group&quot; [ngClass]&#x3D;&quot;{&#x27;input-group-focus&#x27;:focus&#x3D;&#x3D;&#x3D;true}&quot;&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Username&quot; aria-describedby&#x3D;&quot;basic-addon1&quot; (focus)&#x3D;&quot;focus&#x3D;true&quot; (blur)&#x3D;&quot;focus&#x3D;false&quot; &gt;
+                    &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
+                      &lt;span class&#x3D;&quot;input-group-text&quot; id&#x3D;&quot;basic-addon1&quot;&gt;&lt;i class&#x3D;&quot;fa fa-group&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br/&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-sm-6 col-lg-3&quot;&gt;
+                &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+                    &lt;h3&gt;Checkboxes&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-check&quot;&gt;
+                  &lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; value&#x3D;&quot;&quot;&gt;
+                    Unchecked
+                    &lt;span class&#x3D;&quot;form-check-sign&quot;&gt;&lt;/span&gt;
+                  &lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-check&quot;&gt;
+                  &lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; value&#x3D;&quot;&quot; checked&#x3D;&quot;&quot;&gt;
+                    Checked
+                    &lt;span class&#x3D;&quot;form-check-sign&quot;&gt;&lt;/span&gt;
+                  &lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-check disabled&quot;&gt;
+                  &lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; value&#x3D;&quot;&quot; disabled&#x3D;&quot;&quot;&gt;
+                    Disabled unchecked
+                    &lt;span class&#x3D;&quot;form-check-sign&quot;&gt;&lt;/span&gt;
+                  &lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-check disabled&quot;&gt;
+                  &lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; value&#x3D;&quot;&quot; checked&#x3D;&quot;&quot; disabled&#x3D;&quot;&quot;&gt;
+                    Disabled checked
+                    &lt;span class&#x3D;&quot;form-check-sign&quot;&gt;&lt;/span&gt;
+                  &lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-sm-6 col-lg-3&quot;&gt;
+                &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+                    &lt;h3&gt;Radio Buttons&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-check-radio&quot;&gt;
+                  &lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;exampleRadios&quot; id&#x3D;&quot;exampleRadios1&quot; value&#x3D;&quot;option1&quot; &gt;
+                    Radio is off
+                    &lt;span class&#x3D;&quot;form-check-sign&quot;&gt;&lt;/span&gt;
+                  &lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-check-radio&quot;&gt;
+                  &lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;exampleRadios&quot; id&#x3D;&quot;exampleRadios2&quot; value&#x3D;&quot;option2&quot; checked&#x3D;&quot;&quot;&gt;
+                    Radio is on
+                    &lt;span class&#x3D;&quot;form-check-sign&quot;&gt;&lt;/span&gt;
+                  &lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-check-radio disabled&quot;&gt;
+                  &lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;exampleRadios1&quot; id&#x3D;&quot;exampleRadios3&quot; value&#x3D;&quot;option3&quot; disabled&#x3D;&quot;&quot;&gt;
+                    Disabled Radio is off
+                    &lt;span class&#x3D;&quot;form-check-sign&quot;&gt;&lt;/span&gt;
+                  &lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-check-radio disabled&quot;&gt;
+                  &lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+                    &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;exampleRadios1&quot; id&#x3D;&quot;exampleRadios4&quot; value&#x3D;&quot;option3&quot; checked disabled&#x3D;&quot;&quot;&gt;
+                    Disabled Radio is on
+                    &lt;span class&#x3D;&quot;form-check-sign&quot;&gt;&lt;/span&gt;
+                  &lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-sm-6 col-lg-3&quot;&gt;
+                &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+                    &lt;h3&gt;Toggle Buttons&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;!-- &lt;bSwitch
+                 [switch-on-color]&#x3D;&quot;&#x27;primary&#x27;&quot;&gt;
+                &lt;/bSwitch&gt; --&gt;
+                &lt;!-- &lt;bSwitch
+                    [switch-on-color]&#x3D;&quot;&#x27;primary&#x27;&quot;
+                    [(ngModel)]&#x3D;&quot;state_default&quot;&gt; Toggle is off
+                &lt;/bSwitch&gt; --&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-sm-6 col-lg-3&quot;&gt;
+                &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+                    &lt;h3&gt;Sliders&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;!-- &lt;nouislider [connect]&#x3D;&quot;false&quot; [min]&#x3D;&quot;0&quot; [max]&#x3D;&quot;100&quot; [step]&#x3D;&quot;1&quot; [(ngModel)]&#x3D;&quot;simpleSlider&quot; [tooltips]&#x3D;&quot;false&quot; class&#x3D;&quot;slider&quot;&gt;&lt;/nouislider&gt;
+                &lt;br&gt;
+                &lt;nouislider class&#x3D;&quot;slider slider-info&quot; [connect]&#x3D;&quot;true&quot; [min]&#x3D;&quot;0&quot; [max]&#x3D;&quot;100&quot; [step]&#x3D;&quot;1&quot; [(ngModel)]&#x3D;&quot;doubleSlider&quot; [tooltips]&#x3D;&quot;false&quot;&gt;&lt;/nouislider&gt; --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./basicelements.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="section section-buttons">    <div class="container">        <div class="tim-title">            <h2>Basic Components</h2>        </div>        <div id="buttons">            <div class="tim-title">                <h3>Buttons                    <br/>                    <small>Pick your style</small>                </h3>            </div>            <div class="row">                <div class="col-md-8">                    <button type="button" class="btn btn-danger">Default</button>                    <button type="button" class="btn btn-danger btn-round">Round</button>                    <button type="button" class="btn btn-danger btn-round"><i class="fa fa-heart"></i> With Icon</button>                    <button type="button" class="btn btn-danger btn-just-icon"><i class="fa fa-heart"></i></button>                    <button type="button" class="btn btn-danger btn-link">Simple</button>                </div>            </div>            <div class="tim-title">                <h3><small>Pick your size</small></h3>            </div>            <div class="row">                <div class="col-md-8">                    <button type="button" class="btn btn-outline-danger btn-sm">Small</button>                    <button type="button" class="btn btn-outline-danger">Regular</button>                    <button type="button" class="btn btn-outline-danger btn-lg">Large</button>                </div>            </div>            <div class="tim-title">                <h3><small>Pick your color</small></h3>            </div>            <div class="row">                <div class="col-md-8">                    <button type="button" class="btn btn-outline-default btn-round">Default</button><button type="button" class="btn btn-outline-primary btn-round">Primary</button>                    <button type="button" class="btn btn-outline-info btn-round">Info</button>                    <button type="button" class="btn btn-outline-success btn-round">Success</button>                    <button type="button" class="btn btn-outline-warning btn-round">Warning</button>                    <button type="button" class="btn btn-outline-danger btn-round">Danger</button>                </div>            </div>            <br/>            <div class="row">                <div class="col-md-8">                    <button type="button" class="btn btn-default btn-round">Default</button>                    <button type="button" class="btn btn-primary btn-round">Primary</button>                    <button type="button" class="btn btn-info btn-round">Info</button>                    <button type="button" class="btn btn-success btn-round">Success</button>                    <button type="button" class="btn btn-warning btn-round">Warning</button>                    <button type="button" class="btn btn-danger btn-round">Danger</button>                </div>            </div>        </div>            <br/>        <div class="tim-title">            <h3>Links</h3>        </div>        <div class="row">            <div class="col-md-8">                <a href="#0" class="btn btn-link btn-default">Default</a>                <a href="#0" class="btn btn-link btn-primary">Primary</a>                <a href="#0" class="btn btn-link btn-success">Success</a>                <a href="#0" class="btn btn-link btn-info">Info</a>                <a href="#0" class="btn btn-link btn-warning">Warning</a>                <a href="#0" class="btn btn-link btn-danger">Danger</a>                <a href="#0" class="btn btn-link btn-neutral">Neutral</a>            </div>        </div>        <br/>        <div class="tim-title">            <h3>Inputs</h3>        </div>        <div class="row">            <div class="col-sm-3">                <div class="form-group">                    <input type="text" class="form-control" placeholder="Default">                </div>            </div>            <div class="col-sm-3">                <div class="form-group has-success">                    <input type="text" class="form-control form-control-success" id="inputSuccess1" value="Success">                </div>            </div>            <div class="col-sm-3">                <div class="form-group has-danger">                    <input type="text" class="form-control form-control-danger" id="inputDanger1" value="Error">                    <div class="form-control-feedback">Sorry, that username\'s taken. Try another?</div>                </div>            </div>            <div class="col-sm-3">                <div class="input-group" [ngClass]="{\'input-group-focus\':focus===true}">                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" (focus)="focus=true" (blur)="focus=false" >                    <div class="input-group-append">                      <span class="input-group-text" id="basic-addon1"><i class="fa fa-group" aria-hidden="true"></i></span>                    </div>                </div>            </div>        </div>        <br/>        <div class="row">            <div class="col-sm-6 col-lg-3">                <div class="tim-title">                    <h3>Checkboxes</h3>                </div>                <div class="form-check">                  <label class="form-check-label">                    <input class="form-check-input" type="checkbox" value="">                    Unchecked                    <span class="form-check-sign"></span>                  </label>                </div>                <div class="form-check">                  <label class="form-check-label">                    <input class="form-check-input" type="checkbox" value="" checked="">                    Checked                    <span class="form-check-sign"></span>                  </label>                </div>                <div class="form-check disabled">                  <label class="form-check-label">                    <input class="form-check-input" type="checkbox" value="" disabled="">                    Disabled unchecked                    <span class="form-check-sign"></span>                  </label>                </div>                <div class="form-check disabled">                  <label class="form-check-label">                    <input class="form-check-input" type="checkbox" value="" checked="" disabled="">                    Disabled checked                    <span class="form-check-sign"></span>                  </label>                </div>            </div>            <div class="col-sm-6 col-lg-3">                <div class="tim-title">                    <h3>Radio Buttons</h3>                </div>                <div class="form-check-radio">                  <label class="form-check-label">                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >                    Radio is off                    <span class="form-check-sign"></span>                  </label>                </div>                <div class="form-check-radio">                  <label class="form-check-label">                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked="">                    Radio is on                    <span class="form-check-sign"></span>                  </label>                </div>                <div class="form-check-radio disabled">                  <label class="form-check-label">                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios3" value="option3" disabled="">                    Disabled Radio is off                    <span class="form-check-sign"></span>                  </label>                </div>                <div class="form-check-radio disabled">                  <label class="form-check-label">                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios4" value="option3" checked disabled="">                    Disabled Radio is on                    <span class="form-check-sign"></span>                  </label>                </div>            </div>            <div class="col-sm-6 col-lg-3">                <div class="tim-title">                    <h3>Toggle Buttons</h3>                </div>                <!-- <bSwitch                 [switch-on-color]="\'primary\'">                </bSwitch> -->                <!-- <bSwitch                    [switch-on-color]="\'primary\'"                    [(ngModel)]="state_default"> Toggle is off                </bSwitch> -->            </div>            <div class="col-sm-6 col-lg-3">                <div class="tim-title">                    <h3>Sliders</h3>                </div>                <!-- <nouislider [connect]="false" [min]="0" [max]="100" [step]="1" [(ngModel)]="simpleSlider" [tooltips]="false" class="slider"></nouislider>                <br>                <nouislider class="slider slider-info" [connect]="true" [min]="0" [max]="100" [step]="1" [(ngModel)]="doubleSlider" [tooltips]="false"></nouislider> -->            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BasicelementsComponent', 'selector': 'app-basicelements'},{'name': 'CardComponent', 'selector': 'card'},{'name': 'CardsComponent', 'selector': 'card-component'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'EventDetailsComponent', 'selector': 'app-event-details'},{'name': 'EventsComponent', 'selector': 'events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NgbdModalComponent', 'selector': 'app-modal-component'},{'name': 'NgbdModalContent', 'selector': 'app-modal-content'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NucleoiconsComponent', 'selector': 'app-nucleoicons'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegistrationComponent', 'selector': 'registration'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TypographyComponent', 'selector': 'app-typography'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BasicelementsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BasicelementsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

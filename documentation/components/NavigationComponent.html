@@ -1,0 +1,654 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>paper-kit-2-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">paper-kit-2-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NavigationComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/navigation/navigation.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-navigation</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./navigation.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./navigation.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/components/navigation/navigation.component.ts:8</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="12"
+                                    class="link-to-prism">src/app/components/navigation/navigation.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+    selector: &#x27;app-navigation&#x27;,
+    templateUrl: &#x27;./navigation.component.html&#x27;,
+    styleUrls: [&#x27;./navigation.component.scss&#x27;]
+})
+export class NavigationComponent implements OnInit {
+
+    constructor() { }
+
+    ngOnInit() {}
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;section section-navbars&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot; id&#x3D;&quot;menu-dropdown&quot;&gt;
+        &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+            &lt;h3&gt;Menu&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;nav class&#x3D;&quot;navbar navbar-expand-lg bg-primary&quot;&gt;
+                    &lt;div class&#x3D;&quot;container&quot;&gt;
+                        &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;Menu&lt;/a&gt;
+                        &lt;button class&#x3D;&quot;navbar-toggler navbar-toggler-right&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbar-menu&quot; aria-controls&#x3D;&quot;navbarSupportedContent&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+                            &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+                            &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+                            &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+                        &lt;/button&gt;
+                        &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbar-menu&quot;&gt;
+                            &lt;ul class&#x3D;&quot;navbar-nav&quot;&gt;
+                                &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                    &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#pk&quot;&gt;Link&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                    &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#pk&quot;&gt;Link&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                    &lt;div ngbDropdown class&#x3D;&quot;d-inline-block dropdown&quot;&gt;
+                                        &lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;dropdownBasic1&quot; ngbDropdownToggle&gt;Dropdown&lt;/a&gt;
+                                        &lt;div ngbDropdownMenu aria-labelledby&#x3D;&quot;dropdownBasic1&quot; class&#x3D;&quot;dropdown-primary&quot;&gt;
+                                            &lt;a class&#x3D;&quot;dropdown-item&quot;&gt;Action - 1&lt;/a&gt;
+                                            &lt;a class&#x3D;&quot;dropdown-item&quot;&gt;Another Action&lt;/a&gt;
+                                            &lt;a class&#x3D;&quot;dropdown-item&quot;&gt;Something else is here&lt;/a&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;nav class&#x3D;&quot;navbar navbar-expand-lg bg-danger&quot;&gt;
+                    &lt;div class&#x3D;&quot;container&quot;&gt;
+                        &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;Icons&lt;/a&gt;
+                        &lt;button class&#x3D;&quot;navbar-toggler navbar-toggler-right&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbar-menu-icon&quot; aria-controls&#x3D;&quot;navbarSupportedContent&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+                            &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+                            &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+                            &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+                        &lt;/button&gt;
+                        &lt;div class&#x3D;&quot;collapse navbar-collapse justify-content-end&quot; id&#x3D;&quot;navbar-menu-icon&quot;&gt;
+                            &lt;ul class&#x3D;&quot;navbar-nav&quot;&gt;
+                                &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                    &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#pk&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-email-85&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                    &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#pk&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-single-02&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class&#x3D;&quot;nav-item &quot;&gt;
+                                    &lt;div ngbDropdown class&#x3D;&quot;dropdown&quot; placement&#x3D;&quot;bottom-left&quot;&gt;
+                                    &lt;a class&#x3D;&quot;nav-link&quot; id&#x3D;&quot;dropdownBasic1&quot; ngbDropdownToggle&gt;&lt;i class&#x3D;&quot;nc-icon nc-settings-gear-65&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                                        &lt;div ngbDropdownMenu aria-labelledby&#x3D;&quot;dropdownBasic1&quot; class&#x3D;&quot;dropdown-danger dropdown-menu-right&quot;&gt;
+                                            &lt;a class&#x3D;&quot;dropdown-item&quot;&gt;Action - 1&lt;/a&gt;
+                                            &lt;a class&#x3D;&quot;dropdown-item&quot;&gt;Another Action&lt;/a&gt;
+                                            &lt;a class&#x3D;&quot;dropdown-item&quot;&gt;Something else is here&lt;/a&gt;
+                                            &lt;div class&#x3D;&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+                                            &lt;a class&#x3D;&quot;dropdown-item&quot;&gt;Separated link&lt;/a&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/nav&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id&#x3D;&quot;navbar&quot;&gt;
+        &lt;div class&#x3D;&quot;container&quot;&gt;
+            &lt;div class&#x3D;&quot;tim-title&quot;&gt;
+                &lt;h3&gt;Navigation&lt;/h3&gt;
+                &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;navigation-example&quot;&gt;
+            &lt;nav class&#x3D;&quot;navbar navbar-expand-lg bg-primary&quot;&gt;
+                &lt;div class&#x3D;&quot;container&quot;&gt;
+                    &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;Primary Color&lt;/a&gt;
+                    &lt;button class&#x3D;&quot;navbar-toggler navbar-toggler-right burger-menu&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbar-primary&quot; aria-controls&#x3D;&quot;navbarNav&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbar-primary&quot;&gt;
+                        &lt;ul class&#x3D;&quot;navbar-nav ml-auto&quot;&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-compass-05&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&amp;nbsp;Discover&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-single-02&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&amp;nbsp;Profile&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-settings-gear-65&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&amp;nbsp;Settings&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+            &lt;nav class&#x3D;&quot;navbar navbar-expand-lg bg-info&quot;&gt;
+                &lt;div class&#x3D;&quot;container&quot;&gt;
+                    &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;Info Color&lt;/a&gt;
+                    &lt;button class&#x3D;&quot;navbar-toggler navbar-toggler-right&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbar-info&quot; aria-controls&#x3D;&quot;navbarNav&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbar-info&quot;&gt;
+                        &lt;ul class&#x3D;&quot;navbar-nav ml-auto&quot;&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;Discover&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;Profile&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;Settings&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+            &lt;nav class&#x3D;&quot;navbar navbar-expand-lg bg-success&quot;&gt;
+                &lt;div class&#x3D;&quot;container&quot;&gt;
+                    &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;Success Color&lt;/a&gt;
+                    &lt;button class&#x3D;&quot;navbar-toggler navbar-toggler-right&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbar-success&quot; aria-controls&#x3D;&quot;navbarNav&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbar-success&quot;&gt;
+                        &lt;ul class&#x3D;&quot;navbar-nav ml-auto&quot;&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-compass-05&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-single-02&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-settings-gear-65&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+            &lt;nav class&#x3D;&quot;navbar navbar-expand-lg bg-warning&quot;&gt;
+                &lt;div class&#x3D;&quot;container&quot;&gt;
+                    &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;Warning Color&lt;/a&gt;
+                    &lt;button class&#x3D;&quot;navbar-toggler navbar-toggler-right&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbar-warning&quot; aria-controls&#x3D;&quot;navbarNav&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbar-warning&quot;&gt;
+                        &lt;ul class&#x3D;&quot;navbar-nav ml-auto&quot;&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-facebook-official&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-google-plus&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-instagram&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+            &lt;nav class&#x3D;&quot;navbar navbar-expand-lg bg-danger&quot;&gt;
+                &lt;div class&#x3D;&quot;container&quot;&gt;
+                    &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;Danger Color&lt;/a&gt;
+                    &lt;button class&#x3D;&quot;navbar-toggler navbar-toggler-right&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbar-danger&quot; aria-controls&#x3D;&quot;navbarNav&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbar-danger&quot;&gt;
+                        &lt;ul class&#x3D;&quot;navbar-nav ml-auto&quot;&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-facebook-official&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Share&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Tweet&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-pinterest&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Pin&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+            &lt;nav class&#x3D;&quot;navbar navbar-expand-lg navbar-transparent&quot;&gt;
+                &lt;div class&#x3D;&quot;container&quot;&gt;
+                    &lt;a class&#x3D;&quot;navbar-brand&quot; href&#x3D;&quot;#&quot;&gt;Transparent&lt;/a&gt;
+                    &lt;button class&#x3D;&quot;navbar-toggler navbar-toggler-right&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbar-transparent&quot; aria-controls&#x3D;&quot;navbarNav&quot; aria-expanded&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Toggle navigation&quot;&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;navbar-toggler-bar&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbar-transparent&quot;&gt;
+                        &lt;ul class&#x3D;&quot;navbar-nav ml-auto&quot;&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-facebook-official&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Facebook&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Twitter&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class&#x3D;&quot;nav-item&quot;&gt;
+                                &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot;&gt;&lt;i class&#x3D;&quot;fa fa-instagram&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Instagram&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./navigation.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="section section-navbars">    <div class="container" id="menu-dropdown">        <div class="tim-title">            <h3>Menu</h3>        </div>        <div class="row">            <div class="col-md-6">                <nav class="navbar navbar-expand-lg bg-primary">                    <div class="container">                        <a class="navbar-brand" href="#">Menu</a>                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">                            <span class="navbar-toggler-icon"></span>                            <span class="navbar-toggler-icon"></span>                            <span class="navbar-toggler-icon"></span>                        </button>                        <div class="collapse navbar-collapse" id="navbar-menu">                            <ul class="navbar-nav">                                <li class="nav-item">                                    <a class="nav-link" href="#pk">Link</a>                                </li>                                <li class="nav-item">                                    <a class="nav-link" href="#pk">Link</a>                                </li>                                <li class="nav-item">                                    <div ngbDropdown class="d-inline-block dropdown">                                        <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Dropdown</a>                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">                                            <a class="dropdown-item">Action - 1</a>                                            <a class="dropdown-item">Another Action</a>                                            <a class="dropdown-item">Something else is here</a>                                        </div>                                    </div>                                </li>                            </ul>                        </div>                    </div>                </nav>            </div>            <div class="col-md-6">                <nav class="navbar navbar-expand-lg bg-danger">                    <div class="container">                        <a class="navbar-brand" href="#">Icons</a>                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-menu-icon" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">                            <span class="navbar-toggler-icon"></span>                            <span class="navbar-toggler-icon"></span>                            <span class="navbar-toggler-icon"></span>                        </button>                        <div class="collapse navbar-collapse justify-content-end" id="navbar-menu-icon">                            <ul class="navbar-nav">                                <li class="nav-item">                                    <a class="nav-link" href="#pk"><i class="nc-icon nc-email-85" aria-hidden="true"></i></a>                                </li>                                <li class="nav-item">                                    <a class="nav-link" href="#pk"><i class="nc-icon nc-single-02" aria-hidden="true"></i></a>                                </li>                                <li class="nav-item ">                                    <div ngbDropdown class="dropdown" placement="bottom-left">                                    <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-settings-gear-65" aria-hidden="true"></i></a>                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-danger dropdown-menu-right">                                            <a class="dropdown-item">Action - 1</a>                                            <a class="dropdown-item">Another Action</a>                                            <a class="dropdown-item">Something else is here</a>                                            <div class="dropdown-divider"></div>                                            <a class="dropdown-item">Separated link</a>                                        </div>                                    </div>                                </li>                            </ul>                        </div>                    </div>                </nav>            </div>        </div>    </div>    <div id="navbar">        <div class="container">            <div class="tim-title">                <h3>Navigation</h3>                <br/>            </div>        </div>        <div class="navigation-example">            <nav class="navbar navbar-expand-lg bg-primary">                <div class="container">                    <a class="navbar-brand" href="#">Primary Color</a>                    <button class="navbar-toggler navbar-toggler-right burger-menu" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                    </button>                    <div class="collapse navbar-collapse" id="navbar-primary">                        <ul class="navbar-nav ml-auto">                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="nc-icon nc-compass-05" aria-hidden="true"></i>&nbsp;Discover</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="nc-icon nc-single-02" aria-hidden="true"></i>&nbsp;Profile</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="nc-icon nc-settings-gear-65" aria-hidden="true"></i>&nbsp;Settings</a>                            </li>                        </ul>                    </div>                </div>            </nav>            <nav class="navbar navbar-expand-lg bg-info">                <div class="container">                    <a class="navbar-brand" href="#">Info Color</a>                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-info" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                    </button>                    <div class="collapse navbar-collapse" id="navbar-info">                        <ul class="navbar-nav ml-auto">                            <li class="nav-item">                                <a class="nav-link" href="#">Discover</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#">Profile</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#">Settings</a>                            </li>                        </ul>                    </div>                </div>            </nav>            <nav class="navbar navbar-expand-lg bg-success">                <div class="container">                    <a class="navbar-brand" href="#">Success Color</a>                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-success" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                    </button>                    <div class="collapse navbar-collapse" id="navbar-success">                        <ul class="navbar-nav ml-auto">                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="nc-icon nc-compass-05" aria-hidden="true"></i></a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="nc-icon nc-single-02" aria-hidden="true"></i> </a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="nc-icon nc-settings-gear-65" aria-hidden="true"></i></a>                            </li>                        </ul>                    </div>                </div>            </nav>            <nav class="navbar navbar-expand-lg bg-warning">                <div class="container">                    <a class="navbar-brand" href="#">Warning Color</a>                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-warning" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                    </button>                    <div class="collapse navbar-collapse" id="navbar-warning">                        <ul class="navbar-nav ml-auto">                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>                            </li>                        </ul>                    </div>                </div>            </nav>            <nav class="navbar navbar-expand-lg bg-danger">                <div class="container">                    <a class="navbar-brand" href="#">Danger Color</a>                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-danger" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                    </button>                    <div class="collapse navbar-collapse" id="navbar-danger">                        <ul class="navbar-nav ml-auto">                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Share</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-pinterest" aria-hidden="true"></i> Pin</a>                            </li>                        </ul>                    </div>                </div>            </nav>            <nav class="navbar navbar-expand-lg navbar-transparent">                <div class="container">                    <a class="navbar-brand" href="#">Transparent</a>                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-transparent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                        <span class="navbar-toggler-bar"></span>                    </button>                    <div class="collapse navbar-collapse" id="navbar-transparent">                        <ul class="navbar-nav ml-auto">                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>                            </li>                            <li class="nav-item">                                <a class="nav-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>                            </li>                        </ul>                    </div>                </div>            </nav>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BasicelementsComponent', 'selector': 'app-basicelements'},{'name': 'CardComponent', 'selector': 'card'},{'name': 'CardsComponent', 'selector': 'card-component'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'EventDetailsComponent', 'selector': 'app-event-details'},{'name': 'EventsComponent', 'selector': 'events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NgbdModalComponent', 'selector': 'app-modal-component'},{'name': 'NgbdModalContent', 'selector': 'app-modal-content'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NucleoiconsComponent', 'selector': 'app-nucleoicons'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegistrationComponent', 'selector': 'registration'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TypographyComponent', 'selector': 'app-typography'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NavigationComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NavigationComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

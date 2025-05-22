@@ -1,0 +1,974 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>paper-kit-2-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">paper-kit-2-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NucleoiconsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/nucleoicons/nucleoicons.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-nucleoicons</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./nucleoicons.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./nucleoicons.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(element: ElementRef)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/components/nucleoicons/nucleoicons.component.ts:8</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>element</td>
+                                                  
+                                                        <td>
+                                                                    <code>ElementRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="12"
+                                    class="link-to-prism">src/app/components/nucleoicons/nucleoicons.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Inject, Renderer2, ElementRef } from &#x27;@angular/core&#x27;;
+
+@Component({
+    selector: &#x27;app-nucleoicons&#x27;,
+    templateUrl: &#x27;./nucleoicons.component.html&#x27;,
+    styleUrls: [&#x27;./nucleoicons.component.scss&#x27;]
+})
+export class NucleoiconsComponent implements OnInit {
+
+    constructor( private element : ElementRef) {}
+
+    ngOnInit() {
+        const body &#x3D; document.getElementsByTagName(&#x27;app-nucleoicons&#x27;)[0];
+        let navbar &#x3D; document.getElementsByTagName(&#x27;app-navbar&#x27;)[0].children[0];
+        navbar.classList.add(&#x27;navbar-hidden&#x27;);
+        body.classList.add(&#x27;demo-icons&#x27;);
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;header&gt;
+    &lt;h1&gt;Paper Kit 2 Icons&lt;/h1&gt;
+    &lt;p&gt;Built with &lt;a href&#x3D;&quot;https://nucleoapp.com/?ref&#x3D;1712&quot;&gt;nucleoapp.com&lt;/a&gt;&lt;/p&gt;
+&lt;/header&gt;
+
+&lt;div id&#x3D;&quot;icons-wrapper&quot;&gt;
+    &lt;section&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-air-baloon&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-air-baloon&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-album-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-album-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-alert-circle-i&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-alert-circle-i&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-align-center&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-align-center&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-align-left-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-align-left-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-ambulance&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-ambulance&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-app&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-app&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-atom&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-atom&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-badge&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-badge&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-bag-16&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-bag-16&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-bank&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-bank&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-basket&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-basket&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-bell-55&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-bell-55&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-bold&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-bold&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-book-bookmark&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-book-bookmark&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-bookmark-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-bookmark-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-box-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-box-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-box&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-box&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-briefcase-24&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-briefcase-24&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-bulb-63&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-bulb-63&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-bullet-list-67&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-bullet-list-67&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-bus-front-12&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-bus-front-12&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-button-pause&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-button-pause&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-button-play&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-button-play&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-button-power&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-button-power&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-calendar-60&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-calendar-60&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-camera-compact&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-camera-compact&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-caps-small&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-caps-small&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-cart-simple&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-cart-simple&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-chart-bar-32&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-chart-bar-32&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-chart-pie-36&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-chart-pie-36&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-chat-33&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-chat-33&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-check-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-check-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-circle-10&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-circle-10&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-cloud-download-93&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-cloud-download-93&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-cloud-upload-94&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-cloud-upload-94&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-compass-05&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-compass-05&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-controller-modern&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-controller-modern&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-credit-card&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-credit-card&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-delivery-fast&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-delivery-fast&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-diamond&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-diamond&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-email-85&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-email-85&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-favourite-28&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-favourite-28&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-glasses-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-glasses-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-globe-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-globe-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-globe&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-globe&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-hat-3&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-hat-3&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-headphones&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-headphones&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-html5&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-html5&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-image&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-image&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-istanbul&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-istanbul&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-key-25&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-key-25&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-laptop&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-laptop&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-layout-11&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-layout-11&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-lock-circle-open&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-lock-circle-open&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-map-big&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-map-big&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-minimal-down&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-minimal-down&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-minimal-left&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-minimal-left&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-minimal-right&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-minimal-right&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-minimal-up&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-minimal-up&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-mobile&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-mobile&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-money-coins&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-money-coins&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-note-03&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-note-03&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-palette&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-palette&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-paper&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-paper&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-pin-3&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-pin-3&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-planet&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-planet&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-refresh-69&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-refresh-69&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-ruler-pencil&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-ruler-pencil&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-satisfied&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-satisfied&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-scissors&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-scissors&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-send&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-send&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-settings-gear-65&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-settings-gear-65&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-settings&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-settings&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-share-66&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-share-66&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-shop&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-shop&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-simple-add&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-simple-add&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-simple-delete&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-simple-delete&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-simple-remove&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-simple-remove&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-single-02&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-single-02&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-single-copy-04&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-single-copy-04&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-sound-wave&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-sound-wave&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-spaceship&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-spaceship&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-sun-fog-29&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-sun-fog-29&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-support-17&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-support-17&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-tablet-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-tablet-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-tag-content&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-tag-content&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-tap-01&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-tap-01&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-tie-bow&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-tie-bow&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-tile-56&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-tile-56&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-time-alarm&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-time-alarm&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-touch-id&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-touch-id&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-trophy&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-trophy&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-tv-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-tv-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-umbrella-13&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-umbrella-13&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-user-run&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-user-run&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-vector&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-vector&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-watch-time&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-watch-time&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-world-2&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-world-2&lt;/p&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;i class&#x3D;&quot;nc-icon nc-zoom-split&quot;&gt;&lt;/i&gt;
+                &lt;p&gt;nc-zoom-split&lt;/p&gt;
+            &lt;/li&gt;
+            &lt;!-- list of icons here with the proper class--&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./nucleoicons.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><header>    <h1>Paper Kit 2 Icons</h1>    <p>Built with <a href="https://nucleoapp.com/?ref=1712">nucleoapp.com</a></p></header><div id="icons-wrapper">    <section>        <ul>            <li>                <i class="nc-icon nc-air-baloon"></i>                <p>nc-air-baloon</p>            </li>            <li>                <i class="nc-icon nc-album-2"></i>                <p>nc-album-2</p>            </li>            <li>                <i class="nc-icon nc-alert-circle-i"></i>                <p>nc-alert-circle-i</p>            </li>            <li>                <i class="nc-icon nc-align-center"></i>                <p>nc-align-center</p>            </li>            <li>                <i class="nc-icon nc-align-left-2"></i>                <p>nc-align-left-2</p>            </li>            <li>                <i class="nc-icon nc-ambulance"></i>                <p>nc-ambulance</p>            </li>            <li>                <i class="nc-icon nc-app"></i>                <p>nc-app</p>            </li>            <li>                <i class="nc-icon nc-atom"></i>                <p>nc-atom</p>            </li>            <li>                <i class="nc-icon nc-badge"></i>                <p>nc-badge</p>            </li>            <li>                <i class="nc-icon nc-bag-16"></i>                <p>nc-bag-16</p>            </li>            <li>                <i class="nc-icon nc-bank"></i>                <p>nc-bank</p>            </li>            <li>                <i class="nc-icon nc-basket"></i>                <p>nc-basket</p>            </li>            <li>                <i class="nc-icon nc-bell-55"></i>                <p>nc-bell-55</p>            </li>            <li>                <i class="nc-icon nc-bold"></i>                <p>nc-bold</p>            </li>            <li>                <i class="nc-icon nc-book-bookmark"></i>                <p>nc-book-bookmark</p>            </li>            <li>                <i class="nc-icon nc-bookmark-2"></i>                <p>nc-bookmark-2</p>            </li>            <li>                <i class="nc-icon nc-box-2"></i>                <p>nc-box-2</p>            </li>            <li>                <i class="nc-icon nc-box"></i>                <p>nc-box</p>            </li>            <li>                <i class="nc-icon nc-briefcase-24"></i>                <p>nc-briefcase-24</p>            </li>            <li>                <i class="nc-icon nc-bulb-63"></i>                <p>nc-bulb-63</p>            </li>            <li>                <i class="nc-icon nc-bullet-list-67"></i>                <p>nc-bullet-list-67</p>            </li>            <li>                <i class="nc-icon nc-bus-front-12"></i>                <p>nc-bus-front-12</p>            </li>            <li>                <i class="nc-icon nc-button-pause"></i>                <p>nc-button-pause</p>            </li>            <li>                <i class="nc-icon nc-button-play"></i>                <p>nc-button-play</p>            </li>            <li>                <i class="nc-icon nc-button-power"></i>                <p>nc-button-power</p>            </li>            <li>                <i class="nc-icon nc-calendar-60"></i>                <p>nc-calendar-60</p>            </li>            <li>                <i class="nc-icon nc-camera-compact"></i>                <p>nc-camera-compact</p>            </li>            <li>                <i class="nc-icon nc-caps-small"></i>                <p>nc-caps-small</p>            </li>            <li>                <i class="nc-icon nc-cart-simple"></i>                <p>nc-cart-simple</p>            </li>            <li>                <i class="nc-icon nc-chart-bar-32"></i>                <p>nc-chart-bar-32</p>            </li>            <li>                <i class="nc-icon nc-chart-pie-36"></i>                <p>nc-chart-pie-36</p>            </li>            <li>                <i class="nc-icon nc-chat-33"></i>                <p>nc-chat-33</p>            </li>            <li>                <i class="nc-icon nc-check-2"></i>                <p>nc-check-2</p>            </li>            <li>                <i class="nc-icon nc-circle-10"></i>                <p>nc-circle-10</p>            </li>            <li>                <i class="nc-icon nc-cloud-download-93"></i>                <p>nc-cloud-download-93</p>            </li>            <li>                <i class="nc-icon nc-cloud-upload-94"></i>                <p>nc-cloud-upload-94</p>            </li>            <li>                <i class="nc-icon nc-compass-05"></i>                <p>nc-compass-05</p>            </li>            <li>                <i class="nc-icon nc-controller-modern"></i>                <p>nc-controller-modern</p>            </li>            <li>                <i class="nc-icon nc-credit-card"></i>                <p>nc-credit-card</p>            </li>            <li>                <i class="nc-icon nc-delivery-fast"></i>                <p>nc-delivery-fast</p>            </li>            <li>                <i class="nc-icon nc-diamond"></i>                <p>nc-diamond</p>            </li>            <li>                <i class="nc-icon nc-email-85"></i>                <p>nc-email-85</p>            </li>            <li>                <i class="nc-icon nc-favourite-28"></i>                <p>nc-favourite-28</p>            </li>            <li>                <i class="nc-icon nc-glasses-2"></i>                <p>nc-glasses-2</p>            </li>            <li>                <i class="nc-icon nc-globe-2"></i>                <p>nc-globe-2</p>            </li>            <li>                <i class="nc-icon nc-globe"></i>                <p>nc-globe</p>            </li>            <li>                <i class="nc-icon nc-hat-3"></i>                <p>nc-hat-3</p>            </li>            <li>                <i class="nc-icon nc-headphones"></i>                <p>nc-headphones</p>            </li>            <li>                <i class="nc-icon nc-html5"></i>                <p>nc-html5</p>            </li>            <li>                <i class="nc-icon nc-image"></i>                <p>nc-image</p>            </li>            <li>                <i class="nc-icon nc-istanbul"></i>                <p>nc-istanbul</p>            </li>            <li>                <i class="nc-icon nc-key-25"></i>                <p>nc-key-25</p>            </li>            <li>                <i class="nc-icon nc-laptop"></i>                <p>nc-laptop</p>            </li>            <li>                <i class="nc-icon nc-layout-11"></i>                <p>nc-layout-11</p>            </li>            <li>                <i class="nc-icon nc-lock-circle-open"></i>                <p>nc-lock-circle-open</p>            </li>            <li>                <i class="nc-icon nc-map-big"></i>                <p>nc-map-big</p>            </li>            <li>                <i class="nc-icon nc-minimal-down"></i>                <p>nc-minimal-down</p>            </li>            <li>                <i class="nc-icon nc-minimal-left"></i>                <p>nc-minimal-left</p>            </li>            <li>                <i class="nc-icon nc-minimal-right"></i>                <p>nc-minimal-right</p>            </li>            <li>                <i class="nc-icon nc-minimal-up"></i>                <p>nc-minimal-up</p>            </li>            <li>                <i class="nc-icon nc-mobile"></i>                <p>nc-mobile</p>            </li>            <li>                <i class="nc-icon nc-money-coins"></i>                <p>nc-money-coins</p>            </li>            <li>                <i class="nc-icon nc-note-03"></i>                <p>nc-note-03</p>            </li>            <li>                <i class="nc-icon nc-palette"></i>                <p>nc-palette</p>            </li>            <li>                <i class="nc-icon nc-paper"></i>                <p>nc-paper</p>            </li>            <li>                <i class="nc-icon nc-pin-3"></i>                <p>nc-pin-3</p>            </li>            <li>                <i class="nc-icon nc-planet"></i>                <p>nc-planet</p>            </li>            <li>                <i class="nc-icon nc-refresh-69"></i>                <p>nc-refresh-69</p>            </li>            <li>                <i class="nc-icon nc-ruler-pencil"></i>                <p>nc-ruler-pencil</p>            </li>            <li>                <i class="nc-icon nc-satisfied"></i>                <p>nc-satisfied</p>            </li>            <li>                <i class="nc-icon nc-scissors"></i>                <p>nc-scissors</p>            </li>            <li>                <i class="nc-icon nc-send"></i>                <p>nc-send</p>            </li>            <li>                <i class="nc-icon nc-settings-gear-65"></i>                <p>nc-settings-gear-65</p>            </li>            <li>                <i class="nc-icon nc-settings"></i>                <p>nc-settings</p>            </li>            <li>                <i class="nc-icon nc-share-66"></i>                <p>nc-share-66</p>            </li>            <li>                <i class="nc-icon nc-shop"></i>                <p>nc-shop</p>            </li>            <li>                <i class="nc-icon nc-simple-add"></i>                <p>nc-simple-add</p>            </li>            <li>                <i class="nc-icon nc-simple-delete"></i>                <p>nc-simple-delete</p>            </li>            <li>                <i class="nc-icon nc-simple-remove"></i>                <p>nc-simple-remove</p>            </li>            <li>                <i class="nc-icon nc-single-02"></i>                <p>nc-single-02</p>            </li>            <li>                <i class="nc-icon nc-single-copy-04"></i>                <p>nc-single-copy-04</p>            </li>            <li>                <i class="nc-icon nc-sound-wave"></i>                <p>nc-sound-wave</p>            </li>            <li>                <i class="nc-icon nc-spaceship"></i>                <p>nc-spaceship</p>            </li>            <li>                <i class="nc-icon nc-sun-fog-29"></i>                <p>nc-sun-fog-29</p>            </li>            <li>                <i class="nc-icon nc-support-17"></i>                <p>nc-support-17</p>            </li>            <li>                <i class="nc-icon nc-tablet-2"></i>                <p>nc-tablet-2</p>            </li>            <li>                <i class="nc-icon nc-tag-content"></i>                <p>nc-tag-content</p>            </li>            <li>                <i class="nc-icon nc-tap-01"></i>                <p>nc-tap-01</p>            </li>            <li>                <i class="nc-icon nc-tie-bow"></i>                <p>nc-tie-bow</p>            </li>            <li>                <i class="nc-icon nc-tile-56"></i>                <p>nc-tile-56</p>            </li>            <li>                <i class="nc-icon nc-time-alarm"></i>                <p>nc-time-alarm</p>            </li>            <li>                <i class="nc-icon nc-touch-id"></i>                <p>nc-touch-id</p>            </li>            <li>                <i class="nc-icon nc-trophy"></i>                <p>nc-trophy</p>            </li>            <li>                <i class="nc-icon nc-tv-2"></i>                <p>nc-tv-2</p>            </li>            <li>                <i class="nc-icon nc-umbrella-13"></i>                <p>nc-umbrella-13</p>            </li>            <li>                <i class="nc-icon nc-user-run"></i>                <p>nc-user-run</p>            </li>            <li>                <i class="nc-icon nc-vector"></i>                <p>nc-vector</p>            </li>            <li>                <i class="nc-icon nc-watch-time"></i>                <p>nc-watch-time</p>            </li>            <li>                <i class="nc-icon nc-world-2"></i>                <p>nc-world-2</p>            </li>            <li>                <i class="nc-icon nc-zoom-split"></i>                <p>nc-zoom-split</p>            </li>            <!-- list of icons here with the proper class-->        </ul>    </section></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BasicelementsComponent', 'selector': 'app-basicelements'},{'name': 'CardComponent', 'selector': 'card'},{'name': 'CardsComponent', 'selector': 'card-component'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'EventDetailsComponent', 'selector': 'app-event-details'},{'name': 'EventsComponent', 'selector': 'events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NgbdModalComponent', 'selector': 'app-modal-component'},{'name': 'NgbdModalContent', 'selector': 'app-modal-content'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NucleoiconsComponent', 'selector': 'app-nucleoicons'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegistrationComponent', 'selector': 'registration'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TypographyComponent', 'selector': 'app-typography'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NucleoiconsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NucleoiconsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

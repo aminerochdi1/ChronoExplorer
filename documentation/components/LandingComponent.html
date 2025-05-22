@@ -1,0 +1,702 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>paper-kit-2-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">paper-kit-2-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  LandingComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/examples/landing/landing.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-landing</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./landing.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./landing.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#focus" >focus</a>
+                            </li>
+                            <li>
+                                <a href="#focus1" >focus1</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/examples/landing/landing.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/examples/landing/landing.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="focus"></a>
+                    <span class="name">
+                        <span ><b>focus</b></span>
+                        <a href="#focus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/examples/landing/landing.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="focus1"></a>
+                    <span class="name">
+                        <span ><b>focus1</b></span>
+                        <a href="#focus1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/examples/landing/landing.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+    selector: &#x27;app-landing&#x27;,
+    templateUrl: &#x27;./landing.component.html&#x27;,
+    styleUrls: [&#x27;./landing.component.scss&#x27;]
+})
+
+export class LandingComponent implements OnInit {
+  focus: any;
+  focus1: any;
+
+  constructor() { }
+
+  ngOnInit() {}
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;div class&#x3D;&quot;page-header&quot; data-parallax&#x3D;&quot;true&quot; style&#x3D;&quot;background-image: url(&#x27;./assets/img/daniel-olahh.jpg&#x27;);&quot;&gt;
+    &lt;div class&#x3D;&quot;filter&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;motto text-center&quot;&gt;
+            &lt;h1&gt;Example page&lt;/h1&gt;
+            &lt;h3&gt;Start designing your landing page here.&lt;/h3&gt;
+            &lt;br /&gt;
+            &lt;a href&#x3D;&quot;https://www.youtube.com/watch?v&#x3D;dQw4w9WgXcQ&quot; class&#x3D;&quot;btn btn-outline-neutral btn-round&quot;&gt;&lt;i class&#x3D;&quot;fa fa-play&quot;&gt;&lt;/i&gt;Watch video&lt;/a&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-neutral btn-round&quot;&gt;Download&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt; --&gt;
+&lt;div class&#x3D;&quot;main&quot;&gt;
+    &lt;div class&#x3D;&quot;section text-center&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-8 mr-auto ml-auto&quot;&gt;
+                &lt;h2 class&#x3D;&quot;title&quot;&gt;Let&#x27;s talk product&lt;/h2&gt;
+                &lt;h5 class&#x3D;&quot;description&quot;&gt;This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&#x27;t scroll to get here. Add a button if you want the user to see more.&lt;/h5&gt;
+                &lt;br&gt;
+                &lt;a href&#x3D;&quot;#paper-kit&quot; class&#x3D;&quot;btn btn-danger btn-round&quot;&gt;See Details&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br/&gt;&lt;br/&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                &lt;div class&#x3D;&quot;info&quot;&gt;
+                    &lt;div class&#x3D;&quot;icon icon-danger&quot;&gt;
+                        &lt;i class&#x3D;&quot;nc-icon nc-album-2&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;description&quot;&gt;
+                        &lt;h4 class&#x3D;&quot;info-title&quot;&gt;Beautiful Gallery&lt;/h4&gt;
+                        &lt;p class&#x3D;&quot;description&quot;&gt;Spend your time generating new ideas. You don&#x27;t have to think of implementing.&lt;/p&gt;
+                        &lt;a href&#x3D;&quot;#pkp&quot; class&#x3D;&quot;btn btn-link btn-danger&quot;&gt;See more&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                &lt;div class&#x3D;&quot;info&quot;&gt;
+                    &lt;div class&#x3D;&quot;icon icon-danger&quot;&gt;
+                        &lt;i class&#x3D;&quot;nc-icon nc-bulb-63&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;description&quot;&gt;
+                        &lt;h4 class&#x3D;&quot;info-title&quot;&gt;New Ideas&lt;/h4&gt;
+                        &lt;p&gt;Larger, yet dramatically thinner. More powerful, but remarkably power efficient.&lt;/p&gt;
+                        &lt;a href&#x3D;&quot;#pkp&quot; class&#x3D;&quot;btn btn-link btn-danger&quot;&gt;See more&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                &lt;div class&#x3D;&quot;info&quot;&gt;
+                    &lt;div class&#x3D;&quot;icon icon-danger&quot;&gt;
+                        &lt;i class&#x3D;&quot;nc-icon nc-chart-bar-32&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;description&quot;&gt;
+                        &lt;h4 class&#x3D;&quot;info-title&quot;&gt;Statistics&lt;/h4&gt;
+                        &lt;p&gt;Choose from a veriety of many colors resembling sugar paper pastels.&lt;/p&gt;
+                        &lt;a href&#x3D;&quot;#pkp&quot; class&#x3D;&quot;btn btn-link btn-danger&quot;&gt;See more&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                &lt;div class&#x3D;&quot;info&quot;&gt;
+                    &lt;div class&#x3D;&quot;icon icon-danger&quot;&gt;
+                        &lt;i class&#x3D;&quot;nc-icon nc-sun-fog-29&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;description&quot;&gt;
+                        &lt;h4 class&#x3D;&quot;info-title&quot;&gt;Delightful design&lt;/h4&gt;
+                        &lt;p&gt;Find unique and handmade delightful designs related items directly from our sellers.&lt;/p&gt;
+                        &lt;a href&#x3D;&quot;#pkp&quot; class&#x3D;&quot;btn btn-link btn-danger&quot;&gt;See more&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;section section-dark text-center&quot;&gt;
+    &lt;!-- &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;h2 class&#x3D;&quot;title&quot;&gt;Let&#x27;s talk about us&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                &lt;div class&#x3D;&quot;card card-profile card-plain&quot;&gt;
+                    &lt;div class&#x3D;&quot;card-avatar&quot;&gt;
+                        &lt;a href&#x3D;&quot;#avatar&quot;&gt;&lt;img src&#x3D;&quot;./assets/img/faces/clem-onojeghuo-3.jpg&quot; alt&#x3D;&quot;...&quot;&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card-block&quot;&gt;
+                        &lt;a href&#x3D;&quot;#paper-kit&quot;&gt;
+                            &lt;div class&#x3D;&quot;author&quot;&gt;
+                                &lt;h4 class&#x3D;&quot;card-title&quot;&gt;Henry Ford&lt;/h4&gt;
+                                &lt;h6 class&#x3D;&quot;card-category&quot;&gt;Product Manager&lt;/h6&gt;
+                            &lt;/div&gt;
+                        &lt;/a&gt;
+                        &lt;p class&#x3D;&quot;card-description text-center&quot;&gt;
+                        Teamwork is so important that it is virtually impossible for you to reach the heights of your capabilities or make the money that you want without becoming very good at it.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card-footer text-center&quot;&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                &lt;div class&#x3D;&quot;card card-profile card-plain&quot;&gt;
+                    &lt;div class&#x3D;&quot;card-avatar&quot;&gt;
+                        &lt;a href&#x3D;&quot;#avatar&quot;&gt;&lt;img src&#x3D;&quot;./assets/img/faces/joe-gardner-2.jpg&quot; alt&#x3D;&quot;...&quot;&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card-block&quot;&gt;
+                        &lt;a href&#x3D;&quot;#paper-kit&quot;&gt;
+                            &lt;div class&#x3D;&quot;author&quot;&gt;
+                                &lt;h4 class&#x3D;&quot;card-title&quot;&gt;Sophie West&lt;/h4&gt;
+                                &lt;h6 class&#x3D;&quot;card-category&quot;&gt;Designer&lt;/h6&gt;
+                            &lt;/div&gt;
+                        &lt;/a&gt;
+                        &lt;p class&#x3D;&quot;card-description text-center&quot;&gt;
+                        A group becomes a team when each member is sure enough of himself and his contribution to praise the skill of the others. No one can whistle a symphony. It takes an orchestra to play it.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card-footer text-center&quot;&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                &lt;div class&#x3D;&quot;card card-profile card-plain&quot;&gt;
+                    &lt;div class&#x3D;&quot;card-avatar&quot;&gt;
+                        &lt;a href&#x3D;&quot;#avatar&quot;&gt;&lt;img src&#x3D;&quot;./assets/img/faces/erik-lucatero-2.jpg&quot; alt&#x3D;&quot;...&quot;&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card-block&quot;&gt;
+                        &lt;a href&#x3D;&quot;#paper-kit&quot;&gt;
+                            &lt;div class&#x3D;&quot;author&quot;&gt;
+                                &lt;h4 class&#x3D;&quot;card-title&quot;&gt;Robert Orben&lt;/h4&gt;
+                                &lt;h6 class&#x3D;&quot;card-category&quot;&gt;Developer&lt;/h6&gt;
+                            &lt;/div&gt;
+                        &lt;/a&gt;
+                        &lt;p class&#x3D;&quot;card-description text-center&quot;&gt;
+                        The strength of the team is each individual member. The strength of each member is the team. If you can laugh together, you can work together, silence isn’t golden, it’s deadly.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card-footer text-center&quot;&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;#pablo&quot; class&#x3D;&quot;btn btn-link btn-just-icon btn-neutral&quot;&gt;&lt;i class&#x3D;&quot;fa fa-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt; --&gt;
+
+    &lt;!-- &lt;div class&#x3D;&quot;section landing-section&quot;&gt;
+        &lt;div class&#x3D;&quot;container&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-8 mr-auto ml-auto&quot;&gt;
+                    &lt;h2 class&#x3D;&quot;text-center&quot;&gt;Keep in touch?&lt;/h2&gt;
+                    &lt;form class&#x3D;&quot;contact-form&quot;&gt;
+                        &lt;div class&#x3D;&quot;row&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                &lt;label&gt;Name&lt;/label&gt;
+                                &lt;div class&#x3D;&quot;input-group&quot; [ngClass]&#x3D;&quot;{&#x27;input-group-focus&#x27;:focus&#x3D;&#x3D;&#x3D;true}&quot;&gt;
+                                    &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
+                                      &lt;span class&#x3D;&quot;input-group-text&quot;&gt;&lt;i class&#x3D;&quot;nc-icon nc-single-02&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Name&quot; (focus)&#x3D;&quot;focus&#x3D;true&quot; (blur)&#x3D;&quot;focus&#x3D;false&quot; &gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                &lt;label&gt;Email&lt;/label&gt;
+                                &lt;div class&#x3D;&quot;input-group&quot; [ngClass]&#x3D;&quot;{&#x27;input-group-focus&#x27;:focus1&#x3D;&#x3D;&#x3D;true}&quot;&gt;
+                                    &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
+                                      &lt;span class&#x3D;&quot;input-group-text&quot;&gt;  &lt;i class&#x3D;&quot;nc-icon nc-email-85&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Email&quot; (focus)&#x3D;&quot;focus1&#x3D;true&quot; (blur)&#x3D;&quot;focus1&#x3D;false&quot; &gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;label&gt;Message&lt;/label&gt;
+                        &lt;textarea class&#x3D;&quot;form-control&quot; rows&#x3D;&quot;4&quot; placeholder&#x3D;&quot;Tell us your thoughts and feelings...&quot;&gt;&lt;/textarea&gt;
+                        &lt;div class&#x3D;&quot;row&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-4 mr-auto ml-auto&quot;&gt;
+                                &lt;button class&#x3D;&quot;btn btn-danger btn-lg btn-fill&quot;&gt;Send Message&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; --&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./landing.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- <div class="page-header" data-parallax="true" style="background-image: url(\'./assets/img/daniel-olahh.jpg\');">    <div class="filter"></div>    <div class="container">        <div class="motto text-center">            <h1>Example page</h1>            <h3>Start designing your landing page here.</h3>            <br />            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>            <button type="button" class="btn btn-outline-neutral btn-round">Download</button>        </div>    </div></div> --><div class="main">    <div class="section text-center">    <div class="container">        <div class="row">            <div class="col-md-8 mr-auto ml-auto">                <h2 class="title">Let\'s talk product</h2>                <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn\'t scroll to get here. Add a button if you want the user to see more.</h5>                <br>                <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a>            </div>        </div>        <br/><br/>        <div class="row">            <div class="col-md-3">                <div class="info">                    <div class="icon icon-danger">                        <i class="nc-icon nc-album-2"></i>                    </div>                    <div class="description">                        <h4 class="info-title">Beautiful Gallery</h4>                        <p class="description">Spend your time generating new ideas. You don\'t have to think of implementing.</p>                        <a href="#pkp" class="btn btn-link btn-danger">See more</a>                    </div>                </div>            </div>            <div class="col-md-3">                <div class="info">                    <div class="icon icon-danger">                        <i class="nc-icon nc-bulb-63"></i>                    </div>                    <div class="description">                        <h4 class="info-title">New Ideas</h4>                        <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>                        <a href="#pkp" class="btn btn-link btn-danger">See more</a>                    </div>                </div>            </div>            <div class="col-md-3">                <div class="info">                    <div class="icon icon-danger">                        <i class="nc-icon nc-chart-bar-32"></i>                    </div>                    <div class="description">                        <h4 class="info-title">Statistics</h4>                        <p>Choose from a veriety of many colors resembling sugar paper pastels.</p>                        <a href="#pkp" class="btn btn-link btn-danger">See more</a>                    </div>                </div>            </div>            <div class="col-md-3">                <div class="info">                    <div class="icon icon-danger">                        <i class="nc-icon nc-sun-fog-29"></i>                    </div>                    <div class="description">                        <h4 class="info-title">Delightful design</h4>                        <p>Find unique and handmade delightful designs related items directly from our sellers.</p>                        <a href="#pkp" class="btn btn-link btn-danger">See more</a>                    </div>                </div>            </div>        </div>    </div></div><div class="section section-dark text-center">    <!-- <div class="container">        <h2 class="title">Let\'s talk about us</h2>        <div class="row">            <div class="col-md-4">                <div class="card card-profile card-plain">                    <div class="card-avatar">                        <a href="#avatar"><img src="./assets/img/faces/clem-onojeghuo-3.jpg" alt="..."></a>                    </div>                    <div class="card-block">                        <a href="#paper-kit">                            <div class="author">                                <h4 class="card-title">Henry Ford</h4>                                <h6 class="card-category">Product Manager</h6>                            </div>                        </a>                        <p class="card-description text-center">                        Teamwork is so important that it is virtually impossible for you to reach the heights of your capabilities or make the money that you want without becoming very good at it.                        </p>                    </div>                    <div class="card-footer text-center">                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a>                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>                    </div>                </div>            </div>            <div class="col-md-4">                <div class="card card-profile card-plain">                    <div class="card-avatar">                        <a href="#avatar"><img src="./assets/img/faces/joe-gardner-2.jpg" alt="..."></a>                    </div>                    <div class="card-block">                        <a href="#paper-kit">                            <div class="author">                                <h4 class="card-title">Sophie West</h4>                                <h6 class="card-category">Designer</h6>                            </div>                        </a>                        <p class="card-description text-center">                        A group becomes a team when each member is sure enough of himself and his contribution to praise the skill of the others. No one can whistle a symphony. It takes an orchestra to play it.                        </p>                    </div>                    <div class="card-footer text-center">                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a>                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>                    </div>                </div>            </div>            <div class="col-md-4">                <div class="card card-profile card-plain">                    <div class="card-avatar">                        <a href="#avatar"><img src="./assets/img/faces/erik-lucatero-2.jpg" alt="..."></a>                    </div>                    <div class="card-block">                        <a href="#paper-kit">                            <div class="author">                                <h4 class="card-title">Robert Orben</h4>                                <h6 class="card-category">Developer</h6>                            </div>                        </a>                        <p class="card-description text-center">                        The strength of the team is each individual member. The strength of each member is the team. If you can laugh together, you can work together, silence isn’t golden, it’s deadly.                        </p>                    </div>                    <div class="card-footer text-center">                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a>                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>                    </div>                </div>            </div>        </div>    </div></div> -->    <!-- <div class="section landing-section">        <div class="container">            <div class="row">                <div class="col-md-8 mr-auto ml-auto">                    <h2 class="text-center">Keep in touch?</h2>                    <form class="contact-form">                        <div class="row">                            <div class="col-md-6">                                <label>Name</label>                                <div class="input-group" [ngClass]="{\'input-group-focus\':focus===true}">                                    <div class="input-group-prepend">                                      <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>                                    </div>                                    <input type="text" class="form-control" placeholder="Name" (focus)="focus=true" (blur)="focus=false" >                                </div>                            </div>                            <div class="col-md-6">                                <label>Email</label>                                <div class="input-group" [ngClass]="{\'input-group-focus\':focus1===true}">                                    <div class="input-group-prepend">                                      <span class="input-group-text">  <i class="nc-icon nc-email-85"></i></span>                                    </div>                                    <input type="text" class="form-control" placeholder="Email" (focus)="focus1=true" (blur)="focus1=false" >                                </div>                            </div>                        </div>                        <label>Message</label>                        <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>                        <div class="row">                            <div class="col-md-4 mr-auto ml-auto">                                <button class="btn btn-danger btn-lg btn-fill">Send Message</button>                            </div>                        </div>                    </form>                </div>            </div>        </div>    </div> --></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BasicelementsComponent', 'selector': 'app-basicelements'},{'name': 'CardComponent', 'selector': 'card'},{'name': 'CardsComponent', 'selector': 'card-component'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'EventDetailsComponent', 'selector': 'app-event-details'},{'name': 'EventsComponent', 'selector': 'events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NgbdModalComponent', 'selector': 'app-modal-component'},{'name': 'NgbdModalContent', 'selector': 'app-modal-content'},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'NucleoiconsComponent', 'selector': 'app-nucleoicons'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegistrationComponent', 'selector': 'registration'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'TypographyComponent', 'selector': 'app-typography'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'LandingComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LandingComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -37,6 +37,8 @@
     "owl.carousel": "^2.3.4",
     "popper.js": "1.16.1",
     "rxjs": "~7.5.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "swiper": "^11.2.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
