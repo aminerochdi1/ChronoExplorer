@@ -1,42 +1,37 @@
 <div class="container">
-    <h2 class="title">Modifier votre informations</h2>
-    <form (ngSubmit)="onSubmit()">
-      <!-- <div class="form-group">
-        <label>ID</label>
-        <input type="text" class="form-control" [value]="user.id" readonly>
-      </div> -->
-  
+<div class="form-structor">
+    <!-- <h2 class="title">Modifier votre informations</h2> -->
+    <div class="signup">
+      <h2 class="form-title" id="signup">Modifier vos infos</h2>
+      <div class="form-holder">
+        <form (ngSubmit)="onSubmit()" >  
+          <div class="form-holder">
       <div class="form-group">
         <label>Nom</label>
-        <input type="text" class="form-control" [(ngModel)]="user.name" name="name">
+        <input type="text" class="form-control" [(ngModel)]="user.name" name="name" required>
       </div>
   
       <div class="form-group">
         <label>Email</label>
-        <input type="email" class="form-control" [(ngModel)]="user.email" name="email">
+        <input type="email" class="form-control" [(ngModel)]="user.email" name="email" required>
       </div>
   
       <div class="form-group">
         <label>Mot de passe</label>
-        <input type="password" class="form-control" name="password">
+        <input type="text" class="form-control"  [(ngModel)]="password" name="password" autocomplete="new-password" required>
       </div>
+    </div>
   
-      <!-- <div class="form-group">
-        <label>Image de profil</label>
-        <input type="file" class="form-control" (change)="onFileSelected($event, 'image')">
-        <img [src]="'assets/img/' + user.image" *ngIf="user.image" alt="image" height="100">
-      </div>
-  
-      <div class="form-group">
-        <label>Image de couverture </label>
-        <input type="file" class="form-control" (change)="onFileSelected($event, 'cover_picture')">
-        <img [src]="'assets/img/' + user.cover_picture" *ngIf="user.cover_picture" alt="cover" height="100">
-      </div> -->
       <div class="bottom-btn">
-        <button class="btn btn-danger btn-block btn-round" type="submit">Modifier</button>
-            <button class="btn btn-primary btn-block btn-round" [routerLink]="['/user-profile']">Retourner</button>
+        <button class="submit-btn" type="submit">Modifier</button>
+      </div>
+
+      <div class="login slide-up">
+      <div class="center">
+        <button class="submit-btn" [routerLink]="['/user-profile']">Retourner</button>
+      </div>
       </div>
 
     </form>
   </div>
-  
+</div>

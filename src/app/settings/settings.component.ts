@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SettingsComponent implements OnInit {
 
+  password: string = '';
   userId!: number;
   user: User = {
     id: 0,
@@ -20,9 +21,12 @@ export class SettingsComponent implements OnInit {
     cover_picture: ''
   };
 
+  showPassword: boolean=false;
+
   constructor(private userService: UserService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.password = '';
     this.userId = Number(this.route.snapshot.paramMap.get('id'));
     this.userService.getUserById(this.userId).subscribe(data => {
       this.user = data;
@@ -30,9 +34,24 @@ export class SettingsComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.userService.updateUser(this.userId, this.user).subscribe(() => {
+    if (!this.password.trim()) {
+      alert('Le mot de passe est requis.');
+      return;
+    }
+  
+    const payload = {
+      ...this.user,
+      password: this.password 
+    };
+  
+    this.userService.updateUser(this.userId, payload).subscribe(() => {
       alert('Utilisateur mis à jour avec succès !');
+      this.password = '';
     });
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
   onFileSelected(event: any, field: 'image' | 'cover_picture') {
