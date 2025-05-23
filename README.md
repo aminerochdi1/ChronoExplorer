@@ -2,10 +2,6 @@
 
 **Bootstrap 4 support**
 
-Chrono Explorer Angular is built on top of Bootstrap 4, so it fully supports it. Most of the elements from the framework are re-designed to resemble sheets of paper and color pastels. If the are elements that we have not touched, they will gracefully fall back to the Bootstrap 4 default.
-
-# 🕰️ Chrono Explorer
-
 Chrono Explorer est une application web interactive développée avec **Angular** et **Node.js** qui permet aux utilisateurs d’explorer des événements historiques à travers une **ligne du temps visuelle**, de commenter, et de gérer leur profil personnel.
 
 ---
@@ -54,8 +50,6 @@ Chrono Explorer est une application web interactive développée avec **Angular*
 git clone https://github.com/aminerochdi1/ChronoExplorer.git
 cd ChronoExplorer
 
-2. Installer les dépendances
-Backend (Node.js + Express):
 
 
 
