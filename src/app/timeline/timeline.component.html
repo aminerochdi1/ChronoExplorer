@@ -1,0 +1,60 @@
+<div class="timeline">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="timeline-container">
+
+          <div class="timeline-end">
+            <p>Start</p>
+          </div>
+
+          <div class="timeline-continue">
+
+                            <div
+                *ngFor="let event of events; let i = index"
+                class="row"
+                [ngClass]="i % 2 === 0 ? 'timeline-right' : 'timeline-left'">
+
+                <!-- Date on the left for right-side event box -->
+                <div class="col-md-6" *ngIf="i % 2 === 0">
+                    <p class="timeline-date">
+                    {{ event.event_date | date: 'dd MMM yyyy' }}
+                    </p>
+                </div>
+
+                <!-- Event box -->
+                <div class="col-md-6">
+                    <div class="timeline-box">
+                    <div class="timeline-text">
+                        <img
+                        *ngIf="event.image_path"
+                        [src]="'assets/img/' + event.image_path"
+                        alt="{{ event.title }}"
+                        style="max-width: 100%; height: auto; margin-bottom: 10px;" />
+                        <h3>{{ event.location }}</h3>
+                        <h3>{{ event.title }}</h3>
+                        <p>{{ event.description || event['©'] }}</p>
+                    </div>
+                    </div>
+                </div>
+
+                    <!-- Date on the right for left-side event box -->
+                    <div class="col-md-6" *ngIf="i % 2 !== 0">
+                        <p class="timeline-date">
+                        {{ event.event_date | date: 'dd MMM yyyy' }}
+                        </p>
+                    </div>
+                    </div>
+
+
+            <div class="timeline-start">
+              <p>End</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

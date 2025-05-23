@@ -20,6 +20,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { SearchComponent } from './search/search.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 
 @NgModule({
