@@ -27,9 +27,17 @@ Chrono Explorer est une application web interactive développée avec **Angular*
 
 ---
 
-## Structure du projet
+## Structure du base de données
 
 ```bash
+-- Create the database
+CREATE DATABASE IF NOT EXISTS chrono_explorer
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+-- Switch to the new database
+USE chrono_explorer;
+
 -- USERS
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
