@@ -28,7 +28,10 @@
               "src/assets/css/nucleo-icons.css",
               "node_modules/swiper/swiper-bundle.min.css"
                       ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/main.js"
+            ]
           },
           "configurations": {
             "production": {

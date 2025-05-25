@@ -10,17 +10,13 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
-import { ExamplesModule } from './examples/examples.module';
-import { CardsComponent } from './components//cards/cards.component';
 import { EventsComponent } from './events/events.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CardComponent } from './components/cards/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
-import { SearchComponent } from './search/search.component';
-import { TimelineComponent } from './timeline/timeline.component';
+
 
 
 @NgModule({

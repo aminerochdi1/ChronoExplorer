@@ -19,6 +19,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes =[
     { path: 'events/:id', component: EventDetailsComponent,canActivate: [AuthGuard] },
     { path: 'notification', component: NotificationComponent },
     { path: 'timeline', component: TimelineComponent,canActivate: [AuthGuard] },
+    { path: 'about', component: AboutComponent }
 
 
 ];
