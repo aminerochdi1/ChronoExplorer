@@ -27,6 +27,39 @@ Chrono Explorer est une application web interactive développée avec **Angular*
 
 ---
 
+## Structure du projet
+
+```bash
+-- USERS
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+) ENGINE=InnoDB;
+
+-- EVENTS
+CREATE TABLE IF NOT EXISTS events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  event_date DATETIME NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  image_path VARCHAR(255),
+  category VARCHAR(100)
+) ENGINE=InnoDB;
+
+-- COMMENTS
+CREATE TABLE IF NOT EXISTS comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  event_id INT NOT NULL,
+  user_name VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+
 ## 📁 Structure du projet
 - will add it later
 
