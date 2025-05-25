@@ -18,6 +18,7 @@ export class RegistrationComponent implements OnInit {
     this.authService.register(username, email, password).subscribe({
       next: (response: any) => {
         console.log('Registration successful:', response);
+        console.log(username,password,email);
         this.router.navigate(['/login']); 
       },
       error: (error) => {
