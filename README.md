@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS comments (
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
-
+```
 
 ## 📁 Structure du projet
 - will add it later
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS comments (
 ```bash
 git clone https://github.com/aminerochdi1/ChronoExplorer.git
 cd ChronoExplorer
-
+```
 
 
 
